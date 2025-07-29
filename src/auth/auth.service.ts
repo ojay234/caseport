@@ -107,35 +107,42 @@ export class AuthService {
 
 
 
-async register(registerDto: RegisterDto): Promise<{ message: string }> {
+async register(registerDto: RegisterDto): Promise<{ message: string; userId?: string }> {
   const existingUser = await this.usersService.findByEmail(registerDto.email);
+
   if (existingUser && existingUser.isVerified) {
     throw new BadRequestException('Email already in use');
   }
 
 
-  // Generate OTP
   const otp = await this.otpService.generateOtp(registerDto.email);
 
   // Send OTP email
   await this.emailService.sendRegistrationOtp(
     registerDto.email,
     otp,
-   registerDto.fullName
+    registerDto.fullName
   );
 
-if(!existingUser)  {
-  await this.usersService.register({
-    email: registerDto.email,
-    password: registerDto.password,
-    phoneNumber: registerDto.phoneNumber,
-    fullName: registerDto.fullName,
-    isVerified: false
-  });
-}
+  let userId: string | undefined;
 
+  if (!existingUser) {
+    const newUser = await this.usersService.register({
+      email: registerDto.email,
+      password: registerDto.password,
+      phoneNumber: registerDto.phoneNumber,
+      fullName: registerDto.fullName,
+      isVerified: false,
+    });
+    userId = newUser.id;
+  } else {
+    userId = existingUser.id; 
+  }
 
-  return { message: 'OTP sent to your email for verification' };
+  return { 
+    message: 'OTP sent to your email for verification',
+    userId,
+  };
 }
 
 async verifyRegistration(verifyOtpDto: VerifyOtpRegisterDto){

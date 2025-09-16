@@ -1,0 +1,21 @@
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; }
+
+        .Left-panel {
+            background: linear-gradient(to bottom right, #013713, #011d09);
+        }
+    
+        .Left-panel h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+    
+        .Left-panel-div {
+            margin-bottom: 2rem;
+            margin-left: 70px;
+            position: relative;
+            z-index: 10;     }

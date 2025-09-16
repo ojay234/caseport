@@ -1,0 +1,86 @@
+.notifications-panel {
+  width: 280px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.notifications-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  font-weight: 600;
+  color: #111827;
+}
+
+.bell-icon {
+  width: 20px;
+  height: 20px;
+  color: #6b7280;
+}
+
+.notifications-content {
+  padding: 24px;
+  min-height: 200px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  gap: 12px;
+}
+
+.empty-icon {
+  width: 48px;
+  height: 48px;
+  color: #d1d5db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.empty-message {
+  color: #6b7280;
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .notifications-panel {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .notifications-panel {
+    width: 100%;
+  }
+  
+  .notifications-content {
+    padding: 20px;
+    min-height: 150px;
+  }
+  
+  .empty-state {
+    height: 100px;
+    gap: 10px;
+  }
+  
+  .empty-icon {
+    width: 40px;
+    height: 40px;
+  }
+}

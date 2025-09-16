@@ -1,0 +1,273 @@
+.filings-page {
+  padding: 24px;
+  background-color: #f8fafb;
+  min-height: calc(100vh - 80px);
+}
+
+.filings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.filings-title-section {
+  flex: 1;
+}
+
+.filings-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.filings-subtitle {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.filings-controls {
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.search-section {
+  flex: 1;
+}
+
+.search-input-wrapper {
+  position: relative;
+  max-width: 400px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: #9ca3af;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 12px 12px 44px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #f9fafb;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #16a34a;
+  background-color: white;
+}
+
+.filter-section {
+  display: flex;
+  gap: 16px;
+}
+
+.filter-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.filter-icon {
+  position: absolute;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+  color: #6b7280;
+  z-index: 1;
+}
+
+.filter-select {
+  padding: 10px 12px 10px 36px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #16a34a;
+}
+
+.filings-table {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table-cell {
+  padding: 16px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.empty-filings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  gap: 20px;
+}
+
+.empty-filings-icon {
+  margin-bottom: 8px;
+}
+
+.filing-box {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.filing-icon {
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+.empty-filings-message {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.new-filing-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: #16a34a;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.new-filing-link:hover {
+  color: #15803d;
+}
+
+.plus-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.pagination-btn {
+  padding: 8px 16px;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  color: #6b7280;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: #f9fafb;
+  border-color: #16a34a;
+  color: #16a34a;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+  .filings-header {
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+  }
+  
+  .filings-controls {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+  
+  .filter-section {
+    justify-content: flex-start;
+  }
+  
+  .table-header {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .filings-page {
+    padding: 16px;
+  }
+  
+  .filings-controls {
+    padding: 20px;
+  }
+  
+  .search-input-wrapper {
+    max-width: none;
+  }
+  
+  .filter-section {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .empty-filings {
+    padding: 60px 20px;
+  }
+  
+  .filing-box {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .filing-icon {
+    width: 30px;
+    height: 30px;
+  }
+}

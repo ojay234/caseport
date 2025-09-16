@@ -65,7 +65,7 @@ const CreateAccountScreen = () => {
       const {email} = await registerUser({
         fullName: formData.fullName,
         email: formData.email,
-        phoneNumber: formData.phone, // <-- change 'phone' to 'phoneNumber'
+        phoneNumber: formData.phone, 
         password: formData.password,
       }); 
       localStorage.setItem("verify-email", email)
